@@ -7,5 +7,5 @@ package org.dddframework.core;
  * @author Bhuwan Prasad Upadhyay
  * @since 1.0.0
  */
-public class DddDectector {
+public class DddDetector {
 }

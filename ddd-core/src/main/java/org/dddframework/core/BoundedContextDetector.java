@@ -7,6 +7,6 @@ package org.dddframework.core;
  * @author Bhuwan Prasad Upadhyay
  * @since 1.0.0
  */
-public class BoundedContextDetector extends DddDectector {
+public class BoundedContextDetector extends DddDetector {
 
 }
