@@ -6,7 +6,7 @@ pluginManagement {
 }
 
 include 'ddd-core'
-
+include 'ddd-generator'
 // Exposes gradle buildSrc for IDE support
 include "buildSrc"
 rootProject.children.find { it.name == "buildSrc" }.name = "ddd-build-src"
@@ -15,3 +15,5 @@ rootProject.name = 'ddd'
 rootProject.children.each { project ->
     project.buildFileName = "${project.name}.gradle"
 }
+
+

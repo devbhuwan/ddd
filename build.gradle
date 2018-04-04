@@ -48,8 +48,9 @@ configure(allprojects) { project ->
     apply plugin: "propdeps"
     apply plugin: "java"
     apply from: "${gradleScriptDir}/ide.gradle"
-
+    apply plugin: "io.spring.dependency-management"
     apply plugin: "kotlin"
+
     compileKotlin {
         kotlinOptions {
             jvmTarget = "1.8"
@@ -87,11 +88,23 @@ configure(allprojects) { project ->
     }
 
     dependencies {
+        optional("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
+        optional("org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}")
         testCompile("org.mockito:mockito-core:2.12.0")
         testCompile("com.nhaarman:mockito-kotlin:1.5.0")
         testCompile("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
         testRuntime("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")
         testRuntime("org.junit.platform:junit-platform-launcher:${junitPlatformVersion}")
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-starter-parent:${springBootVersion}"
+        }
+        resolutionStrategy {
+            cacheChangingModulesFor 0, 'seconds'
+        }
+        applyMavenExclusions = false
     }
 
 }
