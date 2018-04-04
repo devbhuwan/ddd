@@ -1,6 +1,6 @@
 description = "DDD Generator"
 
 dependencies {
-	compile("de.neuland-bfi:jade4j:1.2.7")
 	compile project(":ddd-core")
+	compile 'org.jtwig:jtwig-core:5.+'
 }

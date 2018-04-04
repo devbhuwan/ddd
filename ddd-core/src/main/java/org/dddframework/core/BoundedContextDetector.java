@@ -1,7 +1,7 @@
 package org.dddframework.core;
 
 /**
- * A common delegate for detecting DDD's bounded context.
+ * A common delegate for detecting DDD's bounded boundedContext.
  * {@link }
  *
  * @author Bhuwan Prasad Upadhyay
